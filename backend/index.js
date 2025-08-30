@@ -26,7 +26,7 @@ app.use(
 	cors({
 		optionsSuccessStatus: 200,
 		credentials: true,
-		origin: process.env["ALLOWED_HOST"],
+		origin: JSON.parse(process.env.ALLOWED_HOST),
 	})
 );
 app.use(express.static("public"));
