@@ -11,7 +11,7 @@ export default function Login() {
     const requestOptions = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify({ ...data, passwd: sha256(data.passwd) }),
+      body: JSON.stringify({ ...data, passwd: data.passwd }),
       credentials: "include",
     };
     fetch(`${backendInfo.url}/api/login/`, requestOptions)
