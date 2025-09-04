@@ -1,6 +1,7 @@
 require("dotenv").config();
 const PORT = process.env.PORT;
 const MONGODB_ATLAS_URI = process.env.MONGODB_ATLAS_URI;
+const ALLOWED_HOST = process.env.ALLOWED_HOST;
 
 var fs = require("fs");
 // const { getUserInfo } = require("@replit/repl-auth")
@@ -26,7 +27,7 @@ app.use(
 	cors({
 		optionsSuccessStatus: 200,
 		credentials: true,
-		origin: JSON.parse(process.env.ALLOWED_HOST),
+		origin: JSON.parse(ALLOWED_HOST),
 	})
 );
 app.use(express.static("public"));
